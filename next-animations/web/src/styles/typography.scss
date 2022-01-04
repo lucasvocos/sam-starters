@@ -1,0 +1,313 @@
+/*
+// === Reset ===
+*/
+
+html,
+body,
+textarea {
+	font-family: $font-family-sans;
+	font-weight: 400;
+	color: color(black);
+}
+
+//
+// === Selection ===
+//
+
+* {
+	&::selection,
+	&::-moz-selection {
+		background-color: var(--color-black);
+		color: var(--color-wheat);
+		transition: background-color 300ms ease, color 300ms ease;
+	}
+
+	body.dark & {
+		&::selection,
+		&::-moz-selection {
+			background-color: var(--color-wheat);
+			color: var(--color-black);
+		}
+	}
+}
+
+
+.usn {
+	user-select: none;
+}
+
+.loading {
+	cursor: wait !important;
+}
+
+.no-focus:focus {
+	outline: none;
+}
+
+.flip-hz {
+	transform: rotateY(180deg);
+}
+
+/*
+// === Utilities ===
+*/
+
+.underline {
+	text-decoration: underline;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 2px;
+	text-decoration-color: currentColor;
+	transition: text-decoration-color 200ms ease;
+
+	&:hover,
+	&:focus {
+		text-decoration-color: transparent;
+	}
+}
+
+
+.hover--fade {
+	transition: opacity 300ms ease;
+
+	&:hover {
+		opacity: 0.75;
+	}
+}
+
+.scroll--fade {
+	transition: all 300ms ease;
+	opacity: 0;
+	transform: translateY(50px);
+
+	&.visible {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	&.hover--fade:hover {
+		opacity: 0.75;
+	}
+}
+
+.underline--invert {
+	text-decoration: underline;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 2px;
+	text-decoration-color: transparent;
+	transition: text-decoration-color 200ms ease;
+
+	&:hover,
+	&:focus {
+		text-decoration-color: currentColor;
+	}
+}
+
+.ellipsis {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.italic {
+	font-style: italic;
+}
+
+.strike {
+	text-decoration: line-through;
+}
+
+.capitalize {
+	text-transform: capitalize;
+}
+
+.fade {
+	opacity: 0.5;
+}
+
+.fit {
+	width: max-content;
+}
+
+.font-medium {
+	font-weight: 500;
+}
+
+strong,
+.bold,
+.strong {
+
+	font-family: neue-haas-unica, sans-serif;
+	font-weight: 500;
+	font-style: normal;
+}
+
+.line-break {
+	ol,
+	ul,
+	p {
+		margin-bottom: $line-height-body-mobile;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		ol,
+		ul {
+			margin-bottom: 0;
+		}
+	}
+
+	@media (min-width: theme('screens.lg')) {
+		ol,
+		ul,
+		p {
+			margin-bottom: $line-height-body-desktop;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			ol,
+			ul {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+//
+// === links ===
+//
+
+.link--header {
+	opacity: 0.5;
+	transition: opacity 300ms ease;
+
+	&:hover,
+	&.active {
+		opacity: 1;
+	}
+}
+
+//
+// === Font size ===
+//
+
+@each $sans-name, $sans-size in $sans-font-sizes {
+	.sans--#{$sans-name} {
+		font-family: $font-family-sans;
+		font-size: $sans-size;
+		letter-spacing: 0.02em;
+		line-height: 120%;
+		font-weight: 400;
+	}
+}
+
+@each $breakpoint-name, $breakpoint-size in $breakpoints {
+	@media (min-width: #{$breakpoint-size}) {
+		@each $sans-name, $sans-size in $sans-font-sizes {
+			.sans--#{$sans-name}--#{$breakpoint-name} {
+				font-family: $font-family-sans;
+				font-size: $sans-size;
+				line-height: 120%;
+				letter-spacing: 0.02em;
+			}
+		}
+	}
+}
+
+@each $mono-name, $mono-size in $mono-font-sizes {
+	.mono--#{$mono-name} {
+		font-family: $font-family-mono;
+		font-size: $mono-size;
+		line-height: 120%;
+		letter-spacing: -0.04em;
+	}
+}
+
+@each $breakpoint-name, $breakpoint-size in $breakpoints {
+	@media (min-width: #{$breakpoint-size}) {
+		@each $mono-name, $mono-size in $mono-font-sizes {
+			.mono--#{$mono-name}--#{$breakpoint-name} {
+				font-family: $font-family-mono;
+				font-size: $mono-size;
+				line-height: 120%;
+				letter-spacing: -0.04em;
+			}
+		}
+	}
+}
+
+
+//
+// === Rich Text ===
+//
+
+.rich-text {
+	a {
+		text-decoration: underline;
+		text-decoration-thickness: 1px;
+		text-underline-offset: 2px;
+		text-decoration-color: currentColor;
+		transition: text-decoration-color 200ms ease;
+
+		&:hover,
+		&:focus {
+			text-decoration-color: transparent;
+		}
+	}
+
+	b,
+	strong {
+		font-weight: 800;
+	}
+
+	ul li {
+		position: relative;
+		padding-left: $spacer-size * 2;
+
+		&:before {
+			content: '•';
+			display: inline;
+			position: absolute;
+			left: 0;
+		}
+	}
+
+	ul li ul li:before {
+		content: '◦';
+	}
+
+	ul li ul li ul li:before {
+		content: '‣';
+	}
+
+	ol {
+		counter-reset: section;
+
+		li {
+			position: relative;
+			padding-left: $spacer-size * 2;
+
+			&:before {
+				counter-increment: section;
+				content: counters(section, '.') '.';
+				display: inline;
+				position: absolute;
+				left: 0;
+			}
+		}
+	}
+
+	ol li ol li:before {
+		content: counter(section, lower-alpha) '.';
+	}
+
+	ol li ol li ol li:before {
+		content: counter(section, lower-roman) '.';
+	}
+}
+
+.rich-text--readable {
+	max-width: 75ch;
+}

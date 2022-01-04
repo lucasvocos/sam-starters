@@ -1,0 +1,9 @@
+.projects-index {
+	@media (min-width: theme('screens.lg')) {
+		padding-top: 33.3vh;
+	}
+}
+
+.projects-index__project {
+	transition: opacity 300ms ease;
+}

@@ -1,0 +1,84 @@
+.carousel {
+  height: calc(100vh - 70px);
+  height: calc(100vh - var(--vh-offset, 70px));
+  position: fixed;
+
+  @include breakpoint(lg) {
+    position: relative;
+    height: calc(100vh - 56px);
+    height: calc(100vh - var(--vh-offset, 56px));
+  }
+}
+.slide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+.carousel__button {
+  top: 90px;
+  bottom: 0;
+  width: calc(50% + 24px);
+  background-color: transparent;
+  z-index: 5;
+  border: 0;
+  -webkit-tap-highlight-color: transparent;
+  position: fixed;
+
+  &:focus {
+    outline: 1px dotted transparent;
+  }
+
+  @include breakpoint(lg) {
+    top: 0;
+    position: absolute;
+    width: calc(50% + 36px);
+  }
+}
+.carousel__button--left {
+  left: -24px;
+  cursor: w-resize;
+  z-index: $z-index-header - 1;
+
+  @include breakpoint(lg) {
+    left: -36px;
+  }
+}
+
+.carousel__button--right {
+  right: -24px;
+  cursor: e-resize;
+  z-index: $z-index-header - 1;
+
+  @include breakpoint(lg) {
+    right: -36px;
+  }
+}
+.carousel__image {
+  max-width: 85vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: fixed;
+
+  @include breakpoint(lg) {
+    position: absolute;
+    max-height: 80vh;
+    max-width: 800px;
+    object-fit: contain;
+  }
+}
+
+.carousel__caption {
+  left: $grid-padding-mobile;
+  bottom: $grid-padding-mobile;
+  z-index: $z-index-takeover-underlay;
+
+  @include breakpoint(lg) {
+    left: $grid-padding-desktop;
+  }
+}

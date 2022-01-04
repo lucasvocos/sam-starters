@@ -1,0 +1,19 @@
+header.header {
+  top: 0;
+  padding-top: $grid-padding-mobile;
+  z-index: $z-index-header;
+  @include breakpoint(lg) {
+    padding-top: $grid-padding-desktop;
+  }
+}
+
+.header__title {
+  font-size: 1em;
+}
+
+.header__nav-link {
+  &:hover,
+  &.active {
+    font-style: italic;
+  }
+}

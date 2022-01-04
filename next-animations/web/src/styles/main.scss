@@ -1,0 +1,37 @@
+@import './tailwind.scss';
+
+// Fonts
+@import './fonts';
+@import './config';
+@import './typography';
+
+//                            //
+// === Project Components === //
+//                            //
+
+@import './components/logo';
+@import './components/header';
+@import './components/information';
+@import './components/project-thumbnails';
+@import './components/project-index';
+@import './components/project';
+
+body {
+	background-color: var(--color-wheat);
+	transition: background-color 300ms ease, color 300ms ease;
+
+	&.dark {
+		background-color: var(--color-black);
+		color: var(--color-wheat);
+	}
+}
+
+::selection {
+	background-color: var(--color-black);
+	color: var(--color-wheat);
+
+	body.dark & {
+			background-color: var(--color-wheat);
+			color: var(--color-black);
+	}
+}

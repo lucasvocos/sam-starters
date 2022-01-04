@@ -1,0 +1,82 @@
+//
+// === Directions ===
+//
+
+$sides: (
+  t: top,
+  b: bottom,
+  l: left,
+  r: right,
+  j: justify,
+);
+
+$alignments: (
+  l: left,
+  r: right,
+  c: center,
+);
+
+//
+// === Colors ===
+//
+
+$all-colors: (
+  white: #fff,
+  black: #000,
+);
+
+//
+// === Breakpoints ===
+//
+
+$breakpoints: (
+  xs: 400px,
+  sm: 600px,
+  md: 800px,
+  lg: 1000px,
+  xl: 1200px,
+);
+
+//
+// === Components ===
+//
+
+// Spacer
+$spacer-max: 40;
+$spacer-size: 10px;
+
+// Grid Container
+$grid-padding-mobile: 24px;
+$grid-padding-desktop: 36px;
+$grid-max-width: 1600px;
+
+//
+// === Typography ===
+//
+
+$typography-breakpoint: lg;
+
+$font-size-body-mobile: 14px;
+$font-size-body-desktop: 16px;
+$line-height-body-mobile: 18px;
+$line-height-body-desktop: 20px;
+
+$font-family-serif: "Times New Roman", serif;
+
+//
+// === Layering ===
+//
+
+$z-index-modal: 1600;
+$z-index-modal-underlay: 1500;
+$z-index-takeover: 1400;
+$z-index-takeover-underlay: 1300;
+$z-index-header: 1000;
+
+.fit {
+  width: fit-content;
+}
+
+img {
+  max-width: 100%;
+}

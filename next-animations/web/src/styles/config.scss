@@ -1,0 +1,115 @@
+//
+// === Directions ===
+//
+
+$sides: (
+	t: top,
+	b: bottom,
+	l: left,
+	r: right,
+	j: justify,
+);
+
+$alignments: (
+	l: left,
+	r: right,
+	c: center,
+);
+
+//
+// === Colors ===
+//
+
+:root {
+	--color-earth: #86837E;
+	--color-wheat: #e8e2dd;
+	--color-white: #ffffff;
+	--color-black: #151515;
+	--color-error: #fe2f2f;
+};
+
+//
+// === Breakpoints ===
+//
+
+$breakpoints: (
+	xs: 400px,
+	sm: 600px,
+	md: 800px,
+	lg: 1000px,
+	xl: 1200px,
+	xxl: 1600px
+);
+
+//
+// === Components ===
+//
+
+// Spacer
+$spacer-max: 50;
+$spacer-size: 10px;
+
+// Inline Grid
+$inline-grid-column-size: 12;
+$inline-grid-breakpoint: lg;
+$inline-grid-gutter-mobile: 12px;
+$inline-grid-gutter-desktop: 10px;
+$inline-grid-gutter-extra: (
+	none: 0px,
+	mobile: $inline-grid-gutter-mobile,
+	desktop: $inline-grid-gutter-desktop,
+);
+
+// Grid Container
+$grid-padding-mobile: 12px;
+$grid-padding-desktop: 10px;
+$grid-max-width: 1600px;
+
+//
+// === Typography ===
+//
+
+$typography-breakpoint: lg;
+
+$font-size-body-mobile: 12px;
+$font-size-body-desktop: 12px;
+$line-height-body-mobile: 22px;
+$line-height-body-desktop: 24px;
+
+$font-family-mono: "Panama Monospace Regular", monospace;
+$font-family-sans: neue-haas-unica, 'Helvetica Now Regular', -apple-system, BlinkMacSystemFont,
+	'Helvetica Neue', Helvetica, sans-serif;
+$font-family-medium: neue-haas-unica, 'Helvetica Now Medium', -apple-system, BlinkMacSystemFont,
+	'Helvetica Neue', Helvetica, sans-serif;
+
+$sans-font-sizes: (
+	12: 12px,
+	14: 14px,
+	16: 16px,
+	17: 17.69px,
+	36: 36px,
+);
+
+$sans-line-heights: (
+	12: 15px,
+	16: 22px,
+	17: '120%',
+	36: 40px,
+);
+
+$mono-font-sizes: (
+	12: 12px,
+	13: 13px,
+	14: 14px,
+	15: 15px,
+	16: 16px,
+	18: 18px,
+	24: 24px,
+	36: 36.63px,
+	48: 48px
+);
+
+
+//
+// === Constants ===
+//

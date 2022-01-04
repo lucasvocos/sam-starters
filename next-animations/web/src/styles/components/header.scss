@@ -1,0 +1,25 @@
+.header {
+	z-index: 1001;
+	transition: background-color 300ms ease;
+}
+
+.header__mobile-menu {
+	z-index: 1000;
+	transition: background-color 300ms ease, color 300ms ease, opacity 300ms ease;
+}
+
+.header__icon {
+	transition: transform 300ms ease;
+
+	&.active {
+		transform: rotate(135deg);
+	}
+}
+
+.circle {
+	height: 10px;
+	width: 10px;
+	border-radius: 10px;
+	transition: background-color 300ms ease;
+	vertical-align: super;
+}

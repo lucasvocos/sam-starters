@@ -1,0 +1,192 @@
+/*
+// === Reset ===
+*/
+
+html,
+body,
+textarea {
+  @include font-smoothing;
+  @include body-font-size;
+  font-family: $font-family-serif;
+  font-weight: 400;
+  color: color(black);
+}
+
+//
+// === Selection ===
+//
+
+* {
+  @include selection {
+    background-color: color(black);
+    color: color(white);
+  }
+}
+
+/*
+// === Utilities ===
+*/
+
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+em,
+.italic {
+  font-style: italic;
+}
+
+.strike {
+  text-decoration: line-through;
+}
+
+.line-break {
+  ol,
+  ul,
+  p,
+  a {
+    margin-bottom: $line-height-body-mobile;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    ol,
+    ul {
+      margin-bottom: 0;
+    }
+  }
+
+  @include breakpoint(#{$typography-breakpoint}) {
+    ol,
+    ul,
+    p {
+      margin-bottom: $line-height-body-desktop;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      ol,
+      ul {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+//
+// === Lineheight ===
+//
+
+.lh--nav {
+  line-height: 1.5em;
+}
+
+//
+// === Links ===
+//
+
+.link--underline {
+  border-bottom: 1px solid transparent;
+  transition: border-color 300ms ease;
+
+  &:focus,
+  &:hover,
+  &.active {
+    border-color: currentColor;
+  }
+}
+
+.link--underline-invert {
+  border-bottom: 1px solid currentColor;
+  transition: border-color 300ms ease;
+
+  &:focus,
+  &:hover,
+  &.active {
+    border-color: transparent;
+  }
+}
+
+//
+// === Rich Text ===
+//
+
+.rich-text {
+  b,
+  strong {
+    font-family: $font-family-serif;
+    font-weight: 800;
+    letter-spacing: initial;
+  }
+  p {
+    min-height: 1em;
+  }
+
+  em,
+  i {
+    font-style: italic;
+  }
+
+  ul li {
+    position: relative;
+    padding-left: $spacer-size * 2;
+
+    &:before {
+      content: "•";
+      display: inline;
+      position: absolute;
+      left: 0;
+    }
+  }
+
+  ul li ul li:before {
+    content: "◦";
+  }
+
+  ul li ul li ul li:before {
+    content: "‣";
+  }
+
+  ol {
+    counter-reset: section;
+
+    li {
+      position: relative;
+      padding-left: $spacer-size * 2;
+
+      &:before {
+        counter-increment: section;
+        content: counters(section, ".") ".";
+        display: inline;
+        position: absolute;
+        left: 0;
+      }
+    }
+  }
+
+  ol li ol li:before {
+    content: counter(section, lower-alpha) ".";
+  }
+
+  ol li ol li ol li:before {
+    content: counter(section, lower-roman) ".";
+  }
+}
+
+//
+// === Underline ===
+//
+.underline {
+  text-decoration: underline;
+}
+
+a:hover,
+a:focus {
+  outline: none;
+  font-style: italic;
+  border: none;
+}

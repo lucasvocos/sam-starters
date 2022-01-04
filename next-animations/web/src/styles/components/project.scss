@@ -1,0 +1,27 @@
+.project,
+.projects-list {
+	@media (min-width: theme('screens.lg')) {
+		padding-top: 33.3vh;
+	}
+}
+
+
+// Assets
+
+.project__asset-multi {
+	@media (min-width: theme('screens.lg')) {
+		width: 37.5%;
+	}
+}
+
+
+// Related
+
+.project__related {
+	border-top: 1px solid currentColor;
+}
+
+.project__related-project-thumbnail {
+	aspect-ratio: 5/3;
+	object-fit: cover;
+}

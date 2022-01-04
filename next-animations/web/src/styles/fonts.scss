@@ -1,0 +1,39 @@
+@import url("https://use.typekit.net/jyb7onz.css");
+
+@font-face {
+	font-family: 'Panama Monospace Regular';
+	src: url('/fonts/PanamaMonospaceRegular.otf') format('opentype'),
+		url('/fonts/PanamaMonospaceRegular.woff') format('woff');
+	font-style: normal;
+	font-weight: normal;
+	line-height: 120%;
+	letter-spacing: -0.04em;
+}
+@font-face {
+	font-family: 'Panama Monospace Italic';
+	src: url('/fonts/PanamaMonospaceItalic.otf') format('opentype'),
+		url('/fonts/PanamaMonospaceItalic.woff') format('woff');
+	font-style: normal;
+	font-weight: normal;
+	line-height: 120%;
+	letter-spacing: -0.04em;
+}
+@font-face {
+	font-family: 'Panama Monospace Iranic';
+	src: url('/fonts/PanamaMonospaceIranic.otf') format('opentype'),
+		url('/fonts/PanamaMonospaceIranic.woff') format('woff');
+	font-style: normal;
+	font-weight: normal;
+	line-height: 120%;
+	letter-spacing: -0.04em;
+}
+
+@font-face {
+	font-family: 'Helvetica Now Regular';
+	src: url('/fonts/HelveticaNowText.woff2') format('woff2'),
+		url('/fonts/HelveticaNowText.woff') format('woff');
+	font-style: normal;
+	font-weight: normal;
+	line-height: 120%;
+	letter-spacing: -0.04em;
+}

@@ -1,0 +1,31 @@
+.logo {
+	height: 100vh;
+	height: -webkit-fill-available;
+	pointer-events: none;
+	z-index: 1000;
+}
+
+.logo--estudio,
+.logo--buenasuerte {
+	path {
+		transition: fill 300ms ease;
+	}
+}
+
+.logo--estudio {
+	top: 24px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.logo--buenasuerte {
+	bottom: 10px;
+	left: 12px;
+	right: 12px;
+	height: auto;
+	width: calc(100vw - 24px);
+
+	@media (min-width: theme('screens.lg')) {
+		bottom: 20px;
+	}
+}

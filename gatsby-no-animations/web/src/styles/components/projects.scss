@@ -1,0 +1,17 @@
+.projects__list {
+  width: 100%;
+  @include breakpoint(lg) {
+    width: 50%;
+    max-height: 250px;
+    flex-flow: column wrap;
+    border: none;
+  }
+}
+
+.projects__list-thumbnail {
+  display: none;
+
+  &.active {
+    display: initial;
+  }
+}

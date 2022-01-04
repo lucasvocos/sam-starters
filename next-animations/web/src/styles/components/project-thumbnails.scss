@@ -1,0 +1,8 @@
+.project__thumbnail {
+	aspect-ratio: 4 / 5;
+	object-fit: cover;
+
+	@media (min-width: theme('screens.lg')) {
+		aspect-ratio: 5 / 6;
+	}
+}
